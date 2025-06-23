@@ -17,12 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from books.views import home
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('books.urls')),  # include your app urls
+    path('', include('books.urls')),  # This takes care of '' and 'report/'
 ]
